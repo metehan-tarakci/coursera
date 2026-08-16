@@ -27,8 +27,7 @@ def generate_kmers():
 
 def most_probable():
     kmers_dict={}
-    for i in range(len(dna)-k+1):
-        for kmer in generate_kmers():
-            kmers_dict[kmer] = probability(kmer)
+    for kmer in generate_kmers():
+        kmers_dict[kmer] = probability(kmer)
     return max(kmers_dict, key=kmers_dict.get)
 print(most_probable())
